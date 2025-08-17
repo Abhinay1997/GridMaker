@@ -1,0 +1,66 @@
+#row-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-right: 5px;
+}
+
+#column-controls {
+    display: flex;
+    gap: 5px;
+    margin-left: 45px; /* Align with row controls */
+    margin-bottom: 5px;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.grid-controls input {
+    width: 60px;
+    font-size: 12px;
+}
+
+.grid-item {
+    position: relative;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.grid-item.selected {
+    outline: 2px solid #007bff;
+    z-index: 10;
+    overflow: visible; /* Allow context menu to show */
+}
+
+.grid-item img, .grid-item .text-cell {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensure images fill the cell */
+}
+
+.text-cell {
+    border: none;
+    resize: none;
+    background-color: #f9f9f9;
+    padding: 5px;
+}
+
+.context-menu {
+    position: absolute;
+    top: 0;
+    right: -150px; /* Position to the right of the cell */
+    width: 140px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.context-menu .btn-group {
+    width: 100%;
+    margin-top: 10px;
+}
